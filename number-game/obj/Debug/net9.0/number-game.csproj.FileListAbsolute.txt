@@ -1,0 +1,15 @@
+D:\unity\学校项目\number-game\number-game\bin\Debug\net9.0\number-game.exe
+D:\unity\学校项目\number-game\number-game\bin\Debug\net9.0\number-game.deps.json
+D:\unity\学校项目\number-game\number-game\bin\Debug\net9.0\number-game.runtimeconfig.json
+D:\unity\学校项目\number-game\number-game\bin\Debug\net9.0\number-game.dll
+D:\unity\学校项目\number-game\number-game\bin\Debug\net9.0\number-game.pdb
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.GeneratedMSBuildEditorConfig.editorconfig
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.AssemblyInfoInputs.cache
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.AssemblyInfo.cs
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.csproj.CoreCompileInputs.cache
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.sourcelink.json
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.dll
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\refint\number-game.dll
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.pdb
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\number-game.genruntimeconfig.cache
+D:\unity\学校项目\number-game\number-game\obj\Debug\net9.0\ref\number-game.dll
