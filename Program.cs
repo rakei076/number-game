@@ -16,7 +16,7 @@ else if(level=="medium")
 }
 else if(level=="hard")
 {
-    number=1000;
+    numberr=1000;
 }
 else{
     Console.WriteLine("無効な難易度です．easy, medium, hardのいずれかを入力してください．");
@@ -70,12 +70,12 @@ bool CheckAnswer(int number,int guess,int count){
     else if(guess<number)
     {
         
-        Console.WriteLine("不正解"+"正解は入力した数字よりも小さいです．");
+        Console.WriteLine("不正解"+"正解は入力した数字よりも大きいです．");
     }
     else if(guess>number)
     {
         
-        Console.WriteLine("不正解"+"正解は入力した数字よりも大きいです．");
+        Console.WriteLine("不正解"+"正解は入力した数字よりも小さいです．");
     }
     if(count==6)
     {
