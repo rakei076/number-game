@@ -5,6 +5,9 @@ class MyGame
         const int EMPTY = 0;
         const int FIRST_PLAYER = 1;
         const int SECOND_PLAYER = -1;
+        private static int currentplayer = FIRST_PLAYER;
+        private static int turnNumber = 1;
+
     // ここにゲームの主処理を書く
     public void Start()
     {
@@ -13,13 +16,14 @@ class MyGame
         Console.WriteLine("ゲームを開始します！");
         
         int[,] board = new int[3,3]; 
+        
         BoardInit(board);
+        kaisu(board);
         
         
         // ここにあなたのロジックを追加
         BoardPrint(board);
-        ReadPlayerInput(board);
-        BoardPrint(board);
+
 
 
  
@@ -87,6 +91,7 @@ class MyGame
         if(!success)
         {
             Console.WriteLine("Row :invalid input");
+            kaisu(board);
             return false;
         }
         Console.Write("> Input Column: ");
@@ -95,13 +100,19 @@ class MyGame
         if(!success)
         {
             Console.WriteLine("Column :invalid input");
+            kaisu(board);
             return false;
         }
         
         if (BoardCheckRange(row,column,board)==false){
+            kaisu(board);
             return false;
         }
-        board[row,column]=FIRST_PLAYER;
+    
+            
+        board[row,column]=currentplayer;
+        Console.WriteLine($"Turn:{turnNumber} Player:{(currentplayer==FIRST_PLAYER?"○":"×")}");
+        
         return true;
     }
     static bool BoardCheckRange(int row,int column,int[,]board)
@@ -109,13 +120,30 @@ class MyGame
         if(row<0||row>2||column<0||column>2)
         {
             Console.WriteLine("Row :out of range");
+            kaisu(board);
             return false;
         }
         if (board[row,column]!=EMPTY){
             Console.WriteLine("その場所に数字を置いています");
+            kaisu(board);
             return false;
         }
         return true;
+    }
+    static void kaisu(int[,]board){
+        
+        currentplayer = FIRST_PLAYER;
+        if(turnNumber%2==0)
+        {
+            currentplayer = SECOND_PLAYER;
+        }
+        
+        if ((ReadPlayerInput(board)==true)&&(BoardPrint(board==true))){
+            turnNumber++;
+        }
+        
+        turnNumber++;
+        kaisu(board);
     }
     
 }
