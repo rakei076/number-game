@@ -82,16 +82,29 @@ class MyGame
     }
     static int ReadPlayerInput(int[,]board){
         Console.Write("> Input Row: ");
-        int row =Convert.ToInt32(Console.ReadLine());
+        int row;
+        bool success =int.TryParse(Console.ReadLine(),out row);
+        if(!success)
+        {
+            Console.WriteLine("Row :invalid input");
+            return -1;
+        }
         Console.Write("> Input Column: ");
-        int column =Convert.ToInt32(Console.ReadLine());
+        int column;
+        success =int.TryParse(Console.ReadLine(),out column);
+        if(!success)
+        {
+            Console.WriteLine("Column :invalid input");
+            return -1;
+        }
         if(row<0||row>2||column<0||column>2)
         {
-            Console.WriteLine("無効な入力");
+            Console.WriteLine("Row :out of range");
             return -1;
             if (board[row,column]!=EMPTY){
             Console.WriteLine("その場所に数字を置いています");
             return -1;
+
             }
         }
         board[row,column]=FIRST_PLAYER;
