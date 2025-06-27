@@ -80,14 +80,14 @@ class MyGame
         Console.WriteLine();// 改行
         }
     }
-    static int ReadPlayerInput(int[,]board){
+    static bool ReadPlayerInput(int[,]board){
         Console.Write("> Input Row: ");
         int row;
         bool success =int.TryParse(Console.ReadLine(),out row);
         if(!success)
         {
             Console.WriteLine("Row :invalid input");
-            return -1;
+            return false;
         }
         Console.Write("> Input Column: ");
         int column;
@@ -95,20 +95,27 @@ class MyGame
         if(!success)
         {
             Console.WriteLine("Column :invalid input");
-            return -1;
+            return false;
         }
+        
+        if (BoardCheckRange(row,column,board)==false){
+            return false;
+        }
+        board[row,column]=FIRST_PLAYER;
+        return true;
+    }
+    static bool BoardCheckRange(int row,int column,int[,]board)
+    {
         if(row<0||row>2||column<0||column>2)
         {
             Console.WriteLine("Row :out of range");
-            return -1;
-            if (board[row,column]!=EMPTY){
-            Console.WriteLine("その場所に数字を置いています");
-            return -1;
-
-            }
+            return false;
         }
-        board[row,column]=FIRST_PLAYER;
-        return 0;
+        if (board[row,column]!=EMPTY){
+            Console.WriteLine("その場所に数字を置いています");
+            return false;
+        }
+        return true;
     }
     
 }
