@@ -18,10 +18,11 @@ class MyGame
         
         // ここにあなたのロジックを追加
         BoardPrint(board);
-        board[0,1] =FIRST_PLAYER;
-        board[1,1] =SECOND_PLAYER;
-        board[2,0] =FIRST_PLAYER;
+        ReadPlayerInput(board);
         BoardPrint(board);
+
+
+ 
         
     }
     static void BoardPrint(int[,] board)
@@ -78,6 +79,23 @@ class MyGame
             
         Console.WriteLine();// 改行
         }
+    }
+    static int ReadPlayerInput(int[,]board){
+        Console.Write("> Input Row: ");
+        int row =Convert.ToInt32(Console.ReadLine());
+        Console.Write("> Input Column: ");
+        int column =Convert.ToInt32(Console.ReadLine());
+        if(row<0||row>2||column<0||column>2)
+        {
+            Console.WriteLine("無効な入力");
+            return -1;
+            if (board[row,column]!=EMPTY){
+            Console.WriteLine("その場所に数字を置いています");
+            return -1;
+            }
+        }
+        board[row,column]=FIRST_PLAYER;
+        return 0;
     }
     
 }
