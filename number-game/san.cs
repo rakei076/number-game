@@ -102,7 +102,7 @@ class MyGame
             return false;
         }
         
-        if (BoardCheckRange(row,column,board)==false){
+        if (BoardCheckEmpty(row,column,board)==false){
             return false;
         }
     
@@ -112,7 +112,7 @@ class MyGame
         
         return true;
     }
-    static bool BoardCheckRange(int row,int column,int[,]board)
+    static bool BoardCheckEmpty(int row,int column,int[,]board)
     {
         if(row<0||row>2||column<0||column>2)
         {
@@ -137,9 +137,21 @@ class MyGame
         {
             turnNumber++;
             BoardPrint(board);
+            if (turnNumber==9){
+                gameover();
+            }
+            else{
+                Console.Write("------------");
+                Console.WriteLine();
+            }
         }
         kaisu(board);
     }
+    static void gameover(){
+        Console.Write("game over");
+        return;
+    }
+
     
 }
 
