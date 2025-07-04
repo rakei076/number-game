@@ -127,7 +127,16 @@ class MyGame
         
     }
     static void kaisu(int[,]board){
-        
+        if(BoardCheckWinner(board)==1){
+            Console.Write($"game over 勝の方は{(currentplayer==FIRST_PLAYER?"○":"×")}");
+            Console.WriteLine();
+            gameover();
+            return;
+        }
+        if (turnNumber==10){
+                gameover();
+                return;
+            }
         currentplayer = FIRST_PLAYER;
         if(turnNumber%2==0)
         {
@@ -138,21 +147,37 @@ class MyGame
         {
             turnNumber++;
             BoardPrint(board);
-            if (turnNumber==9){
-                gameover();
-            }
-            else{
-                Console.Write("------------");
-                Console.WriteLine();
-            }
+           
+            Console.Write("------------");
+            Console.WriteLine();
+            
         }
         kaisu(board);
     }
     static void gameover(){
         Console.Write("game over");
+        Console.WriteLine();
         return;
     }
-    // 现在可能是这样的
+    static int BoardCheckWinner(int[,]board){
+        for(int i=0;i<3;i++){
+            if(board[i,0]!=EMPTY&&board[i,0]==board[i,1]&&board[i,1]==board[i,2]){
+                return 1;
+            }
+        }
+        for(int i=0;i<3;i++){
+            if(board[0,i]!=EMPTY&&board[0,i]==board[1,i]&&board[1,i]==board[2,i]){
+                return 1;
+            }
+        }
+        if(board[0,0]!=EMPTY&&board[0,0]==board[1,1]&&board[1,1]==board[2,2]){
+            return 1;
+        }
+        if(board[0,2]!=EMPTY&&board[0,2]==board[1,1]&&board[1,1]==board[2,0]){
+            return 1;
+        }
+        return 0;
+    }
 
     
 }
