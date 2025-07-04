@@ -102,7 +102,7 @@ class MyGame
             return false;
         }
         
-        if (BoardCheckEmpty(row,column,board)==false){
+        if (BoardUpdate(row,column,board)==false){
             return false;
         }
     
@@ -112,7 +112,7 @@ class MyGame
         
         return true;
     }
-    static bool BoardCheckEmpty(int row,int column,int[,]board)
+    static bool BoardUpdate(int row,int column,int[,]board)
     {
         if(row<0||row>2||column<0||column>2)
         {
@@ -124,6 +124,7 @@ class MyGame
             return false;
         }
         return true;
+        
     }
     static void kaisu(int[,]board){
         
@@ -151,6 +152,7 @@ class MyGame
         Console.Write("game over");
         return;
     }
+    // 现在可能是这样的
 
     
 }
