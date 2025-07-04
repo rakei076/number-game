@@ -91,7 +91,6 @@ class MyGame
         if(!success)
         {
             Console.WriteLine("Row :invalid input");
-            kaisu(board);
             return false;
         }
         Console.Write("> Input Column: ");
@@ -100,12 +99,10 @@ class MyGame
         if(!success)
         {
             Console.WriteLine("Column :invalid input");
-            kaisu(board);
             return false;
         }
         
         if (BoardCheckRange(row,column,board)==false){
-            kaisu(board);
             return false;
         }
     
@@ -120,12 +117,10 @@ class MyGame
         if(row<0||row>2||column<0||column>2)
         {
             Console.WriteLine("Row :out of range");
-            kaisu(board);
             return false;
         }
         if (board[row,column]!=EMPTY){
             Console.WriteLine("その場所に数字を置いています");
-            kaisu(board);
             return false;
         }
         return true;
@@ -138,11 +133,11 @@ class MyGame
             currentplayer = SECOND_PLAYER;
         }
         
-        if ((ReadPlayerInput(board)==true)&&(BoardPrint(board==true))){
+        if (ReadPlayerInput(board))
+        {
             turnNumber++;
+            BoardPrint(board);
         }
-        
-        turnNumber++;
         kaisu(board);
     }
     
