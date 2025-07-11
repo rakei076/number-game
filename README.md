@@ -1,49 +1,26 @@
-# Number Game Project
+# 数当てゲーム (Number Game)
 
-## プロジェクト概要
-このプロジェクトは学校の課題として作成されたC#のゲームプログラムです。
+## 概要
+C#で作成された数当てゲームです。
 
 ## ファイル構成
-
-### 課題1：数字当てゲーム
-- **ファイル名**: `number-game/Program_kadai1.md`
-- **説明**: 数字当てゲームのプログラム
-- **注意**: C#ファイルは1つのプロジェクトに1つのMainメソッドしか持てないため、.mdファイルとして保存しています
-
-### 課題2：○×ゲーム（三目並べ）
-- **ファイル名**: `number-game/san.cs`
-- **説明**: 三目並べゲームのプログラム
+- `number-game/Program_kadai1.cs` - メインプログラム
+- `number-game/number-game.csproj` - プロジェクトファイル
 
 ## 実行方法
+```bash
+cd number-game
+dotnet run
+```
 
-### 課題1の実行
-1. `Program_kadai1.md`の内容を新しい`.cs`ファイルにコピー
-2. 以下のコマンドで実行：
-   ```
-   cd "D:\unity\学校项目\number-game\number-game"
-   dotnet run
-   ```
+## 遊び方
+1. 難易度を選択 (easy/medium/hard)
+   - easy: 1-10
+   - medium: 1-100  
+   - hard: 1-1000
 
-### 課題2の実行
-1. `number-game`フォルダに移動
-2. 以下のコマンドで実行：
-   ```
-   cd "D:\unity\学校项目\number-game\number-game"
-   dotnet run
-   ```
-
-## ゲーム説明
-
-### 課題1：数字当てゲーム
-- 3つの難易度選択（easy/medium/hard）
-- 6回以内に正解を当てる
-- ヒント機能付き（大きい/小さい）
-
-### 課題2：○×ゲーム
-- 3x3のボードで交互に○と×を配置
-- 縦・横・斜めのいずれかで3つ並べば勝利
-- 2人プレイ対応
+2. 数字を入力
+3. ヒントを見て6回以内に正解を当てる
 
 ## 必要環境
-- .NET Core SDK
-- コンソール環境
+- .NET 9.0 SDK
