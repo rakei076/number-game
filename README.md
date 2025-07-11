@@ -6,7 +6,7 @@ C#で作成された数当てゲームです。
 ## ファイル構成
 - `number-game/Program_kadai1.cs` - メインプログラム
 
-
+　
 ## 実行方法
 ```bash
 cd number-game
