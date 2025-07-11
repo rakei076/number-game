@@ -5,7 +5,7 @@ C#で作成された数当てゲームです。
 
 ## ファイル構成
 - `number-game/Program_kadai1.cs` - メインプログラム
-- `number-game/number-game.csproj` - プロジェクトファイル
+
 
 ## 実行方法
 ```bash
